@@ -1,0 +1,28 @@
+ {% extends 'main/base.html' %}
+    {% load static %}
+    {% block content %}
+
+
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-5">
+            <div class="container py-5">
+                <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="blog-item p-4">
+                        <div class="blog-img mb-4">
+                        </div>
+                        {% for adviser in advisers %}
+                        <a href="#" class="h4 d-inline-block mb-3">{{ adviser.first_name }}{{ adviser.last_name }}</a>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ adviser.image }}" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="">
+                            <div class="ms-3">
+                                <h5>Admin</h5> <p class="mb-0">{{ adviser.level }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+    {% endblock %}
